@@ -1,0 +1,41 @@
+﻿@model EmployeeCRUDOperations.Models.Employee
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditEmployee</title>
+</head>
+<body>
+    <div>
+        <h1>Edit Employee Details</h1>
+        <h3>@TempData["SuccessMessage"]</h3>
+        @using (Html.BeginForm())
+        {
+            <p>
+                <label>Name</label> : @Html.TextBoxFor(e => e.Name)
+                <span>@Html.ValidationMessageFor(e => e.Name)</span>
+            </p>
+
+            <p>
+                <label>Location</label> : @Html.TextBoxFor(e => e.Location)
+
+                <span>@Html.ValidationMessageFor(e => e.Location)</span>
+            </p>
+            <p>
+                <label>Salary</label> : @Html.TextBoxFor(e => e.Salary)
+                <span>@Html.ValidationMessageFor(e => e.Salary)</span>
+            </p>
+            <p>
+                <label>Department Id</label> : @Html.TextBoxFor(e => e.DeptId)
+                <span>@Html.ValidationMessageFor(e => e.DeptId)</span>
+            </p>
+            <p><button>Update</button></p>
+        }
+    </div>
+</body>
+</html>

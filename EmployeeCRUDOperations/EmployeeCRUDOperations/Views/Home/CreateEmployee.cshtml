@@ -1,0 +1,46 @@
+﻿@model EmployeeCRUDOperations.Models.Employee
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateEmployee</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1>Employee Entry Form</h1>
+            
+            <form method="post" action="/Home/CreateEmployee">
+                <p>
+                    <label>ID</label> : @Html.TextBoxFor(e => e.ID)
+                    <span>@Html.ValidationMessageFor(e=>e.ID)</span>
+                </p>
+                <p>
+                    <label>Name</label> : @Html.TextBoxFor(e => e.Name)
+                    <span>@Html.ValidationMessageFor(e => e.Name)</span>
+                </p>
+
+                <p>
+                    <label>Location</label> : @Html.TextBoxFor(e => e.Location)
+                   
+                    <span>@Html.ValidationMessageFor(e => e.Location)</span>
+                </p>
+                <p>
+                    <label>Salary</label> : @Html.TextBoxFor(e => e.Salary)
+                    <span>@Html.ValidationMessageFor(e => e.Salary)</span>
+                </p>
+                <p>
+                    <label>Department Id</label> : @Html.TextBoxFor(e => e.DeptId)
+                    <span>@Html.ValidationMessageFor(e => e.DeptId)</span>
+                </p>
+                <p><button>Create</button></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
